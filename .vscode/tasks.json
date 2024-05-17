@@ -1,0 +1,45 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++ build active file",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-std=c++17",
+				"-fdiagnostics-color=always",
+				"-Wall",
+				"-g",
+				"-I${workspaceFolder}/DLA_Histo/dependencies/include",
+				"-L${workspaceFolder}/DLA_Histo/dependencies/library",
+				"${workspaceFolder}/DLA_Histo/dependencies/library/libglfw.3.4.dylib",
+				"${workspaceFolder}/DLA_Histo/*.cpp",
+				"${workspaceFolder}/DLA_Histo/glad.c",
+				"-o",
+				"${workspaceFolder}/DLA_Histo/app",
+				"-framework",
+				"OpenGL",
+				"-framework",
+				"Cocoa",
+				"-framework",
+				"IOKit",
+				"-framework",
+				"CoreVideo",
+				"-framework",
+				"CoreFoundation",
+				"-Wno-deprecated"
+			   ],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/clang++"
+		}
+	]
+}
